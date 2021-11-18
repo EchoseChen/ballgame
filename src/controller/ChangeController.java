@@ -1,6 +1,6 @@
 package controller;
 
-import UI.ChangePanel;
+import view.ChangePanel;
 import config.Function;
 import entity.GameButton;
 import config.Change;

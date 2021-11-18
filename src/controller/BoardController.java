@@ -254,4 +254,29 @@ public class BoardController{
     public void setSizeRate(int sizeRate) {
         this.sizeRate = sizeRate;
     }
+
+    public boolean canRotate(int x, int y, int size, GizmoController curGizmo){
+        int dx, dy;
+        dx = curGizmo.getX();
+        dy = curGizmo.getY();
+        if (dx >= x && dy <= y && dx <= x + size && dy >= y - size && curGizmo.getFigure() != curGizmo.getFigure()){
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean canAdd(int x, int y, int size, Figure figure){
+        for (int i = x; i < x + size; i++) {
+            for (int j = y; j < y + size; j++) {
+                if (getGizmo(i, j) != null) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+
 }

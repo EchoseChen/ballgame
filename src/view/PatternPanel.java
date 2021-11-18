@@ -18,7 +18,7 @@ public class PatternPanel extends JPanel {
         super.setBorder(new TitledBorder(new EtchedBorder(), "模式栏", TitledBorder.CENTER, TitledBorder.TOP));
 
         btnDesign.setBounds(30,30,140,30);
-        btnDesign.setFont(new Font("等线light", Font.BOLD, 20));
+//        btnDesign.setFont(new Font("等线light", Font.BOLD, 20));
         btnDesign.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -29,7 +29,7 @@ public class PatternPanel extends JPanel {
 
 
         btnPlay.setBounds(30,70,140,30);
-        btnPlay.setFont(new Font("等线light", Font.BOLD, 20));
+//        btnPlay.setFont(new Font("等线light", Font.BOLD, 20));
         btnPlay.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {

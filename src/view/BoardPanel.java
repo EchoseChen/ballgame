@@ -9,9 +9,10 @@ import controller.ChangeController;
 import controller.GizmoController;
 
 import javax.swing.*;
-import java.awt.event.HierarchyBoundsAdapter;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.Line2D;
+import java.awt.image.BufferedImage;
 
 public class BoardPanel extends JPanel {
     private BoardController boardController;
@@ -45,7 +46,7 @@ public class BoardPanel extends JPanel {
                     }
                     if (changeController.getFigure() == Figure.Ball)
                         sizeRate = 1;
-                    else if (changeController.getFigure() == Figure.LeftPaddle||changeController.getFigure()==Figure.RightPaddleh我)
+                    else if (changeController.getFigure() == Figure.LeftPaddle||changeController.getFigure()==Figure.RightPaddle)
                         sizeRate = 2;
                     else if (changeController.getFigure() == Figure.Track)
                         sizeRate = 1;
@@ -83,6 +84,64 @@ public class BoardPanel extends JPanel {
             }
         });
 
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                int code = e.getKeyCode();
+                if (boardController.isDesignFunction()) return;
+                /*if (e.getKeyChar() == ' '){
+                    board.keyApplyForce();
+                }*/
+                if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_UP || code == KeyEvent.VK_DOWN){
+                    int dx = 0, dy = 0;
+                    switch (code) {
+                        case KeyEvent.VK_LEFT:
+                            dx = -5;
+                            break;
+                        case KeyEvent.VK_RIGHT:
+                            dx = 5;
+                            break;
+                        case KeyEvent.VK_UP:
+                            dy = 5;
+                            break;
+                        case KeyEvent.VK_DOWN:
+                            dy = -5;
+                            break;
+                    }
+                    boardController.rightPaddleMove(dx, dy);
+                }
+
+                else if(code == KeyEvent.VK_A || code == KeyEvent.VK_D || code == KeyEvent.VK_W || code == KeyEvent.VK_S){
+                    int dx = 0, dy = 0;
+                    switch (code) {
+                        case KeyEvent.VK_A:
+                            dx = -5;
+                            break;
+                        case KeyEvent.VK_D:
+                            dx = 5;
+                            break;
+                        case KeyEvent.VK_W:
+                            dy = 5;
+                            break;
+                        case KeyEvent.VK_S:
+                            dy = -5;
+                            break;
+                    }
+                    boardController.leftPaddleMove(dx, dy);
+                }
+            }
+        });
+
+        addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                if(boardController.getCanFocus())
+                    requestFocus();
+            }
+        });
+
+        repaint();
+
     }
 
     public void design(){
@@ -113,5 +172,26 @@ public class BoardPanel extends JPanel {
             }
             repaint();
         }
+    }
+
+    public void paintBoard(Graphics g){
+        Image image = new BufferedImage(getWidth(), getHeight(), Image.SCALE_DEFAULT);
+        image.getGraphics().drawRect(0, 0, getWidth(), getHeight());
+        length = getLength();
+        Graphics2D g2D = (Graphics2D) image.getGraphics();
+        super.setBackground(new Color(0, 0, 0));
+        g2D.setColor(this.getBackground());
+        g2D.fill(new Rectangle(0, 0, getWidth(), getHeight()));
+        g2D.setColor(Color.WHITE);
+        for (int i = 0; i <= GameInterface.LINES; i++) {
+            Line2D row = new Line2D.Double(GameInterface.X0, GameInterface.Y0 + grid * i, length, GameInterface.Y0 + grid * i);
+            Line2D col = new Line2D.Double(GameInterface.X0 + grid * i, GameInterface.Y0, GameInterface.X0 + grid * i, length+grid);
+            g2D.draw(row);     //绘画横线
+            g2D.draw(col);     //绘画纵线
+        }
+        boardController.paintComponents(g2D, grid, length);
+        g.clearRect(0, 0, getWidth(), getHeight());
+        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+
     }
 }
