@@ -1,5 +1,6 @@
 package view;
 
+import controller.FileController;
 import controller.GizmoController;
 import entity.Gizmo;
 
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GamePanel extends JMenuBar{
-    private JMenu fileMenu = new JMenu("文件");
-    private JMenuItem newGame = new JMenuItem("新建游戏");
-    private JMenuItem saveGame = new JMenuItem("保存游戏");
-    private JMenuItem openGame = new JMenuItem("读取游戏");
+    private JMenu fileMenu = new JMenu("File");
+    private JMenuItem newGame = new JMenuItem("newGame");
+    private JMenuItem saveGame = new JMenuItem("loadGame");
+    private JMenuItem openGame = new JMenuItem("readGame");
 
     public GamePanel(BoardPanel boardPanel){
         fileMenu.add(newGame);
@@ -40,7 +41,7 @@ public class GamePanel extends JMenuBar{
         openGame.addActionListener(e -> {
             boardPanel.getBoard().setCanFocus(false);
             JFileChooser chooser = new JFileChooser();
-            chooser.setFileFilter(new PinballFileFilter());
+            chooser.setFileFilter(new FileController());
             chooser.showOpenDialog(this);
             File file = chooser.getSelectedFile();
             boardPanel.loadScene(file.getAbsolutePath());
@@ -49,16 +50,3 @@ public class GamePanel extends JMenuBar{
     }
 }
 
-class PinballFileFilter extends FileFilter {
-
-    @Override
-    public boolean accept(File f) {
-        if (f.isDirectory()) return true;
-        return f.getName().endsWith(".psc");
-    }
-
-    @Override
-    public String getDescription() {
-        return ".psc";
-    }
-}

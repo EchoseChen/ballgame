@@ -49,7 +49,7 @@ public class BallGameWindow {
     }
 
     public void FunctionBoardInit(){
-        NamePanel namePanel1 = new NamePanel("Component Column");
+        NamePanel namePanel1 = new NamePanel("Component Bar");
         namePanel1.setPreferredSize(new Dimension(180,23));
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -69,7 +69,7 @@ public class BallGameWindow {
 //        constraints.weighty = 0.2;
         jFrame.add(figurePanel,gridBagConstraints);
 
-        NamePanel namePanel2 = new NamePanel("组件栏");
+        NamePanel namePanel2 = new NamePanel("Change Bar");
         namePanel2.setPreferredSize(new Dimension(180,23));
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -88,7 +88,7 @@ public class BallGameWindow {
         gridBagConstraints.weighty = 0.3;
         jFrame.add(changePanel,gridBagConstraints);
 
-        NamePanel namePanel3 = new NamePanel("组件栏");
+        NamePanel namePanel3 = new NamePanel("Pattern Bar");
         namePanel3.setPreferredSize(new Dimension(180,23));
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
