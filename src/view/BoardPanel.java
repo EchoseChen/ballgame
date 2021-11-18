@@ -52,7 +52,7 @@ public class BoardPanel extends JPanel {
                     else if (changeController.getFigure() == Figure.Curve)
                         sizeRate = 1;
                     if (boardController.canAdd(x, y, sizeRate, changeController.getFigure())){
-                        System.out.println(changeController.getFigure());
+//                        System.out.println(changeController.getFigure());
 
                         if (changeController.getFigure() == Figure.Track){
                             GizmoController tmp = new GizmoController(x,y,sizeRate, changeController.getFigure(), changeController.getImg());
