@@ -19,7 +19,9 @@ public class BallGameWindow {
     private ChangePanel changePanel = new ChangePanel(boardController);
     private FigurePanel figurePanel = new FigurePanel();
 
+
     public BallGameWindow(){
+        boardController.newWorld();
         jFrame.setSize(800, 600);
         jFrame.setLayout(gridBagLayout);
         gridBagConstraints.fill = GridBagConstraints.BOTH;

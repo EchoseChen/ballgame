@@ -7,6 +7,7 @@ import config.GameInterface;
 import controller.BoardController;
 import controller.ChangeController;
 import controller.GizmoController;
+import org.jbox2d.dynamics.contacts.Contact;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,9 +16,9 @@ import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
 public class BoardPanel extends JPanel {
-    private BoardController boardController;
+    private  BoardController boardController;
     private ChangeController changeController;
-    private MyThread thread;
+    private  MyThread thread;
     private int length = 200;//面板宽度
     private int grid;//格子
     private static GizmoController gizmoController;
@@ -28,7 +29,7 @@ public class BoardPanel extends JPanel {
         this.changeController = changeController;
         grid = getGridSize();
         boardController.setRowHeight(grid);
-        boardController.newWorld();
+//        boardController.newWorld();
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -54,7 +55,7 @@ public class BoardPanel extends JPanel {
                     if (boardController.canAdd(x, y, sizeRate, changeController.getFigure())){
 //                        System.out.println(changeController.getFigure());
 
-                        if (changeController.getFigure() == Figure.Track){
+                        if (changeController.getFigure() == Figure.Absorber){
                             GizmoController tmp = new GizmoController(x,y,sizeRate, changeController.getFigure(), changeController.getImg());
                             // Gizmo tmp1 = new Gizmo(x - 1,y, sizeRate, dataSource.getShape(), dataSource.getImg());
                             boardController.addComponents(tmp);
@@ -193,8 +194,8 @@ public class BoardPanel extends JPanel {
         g.clearRect(0, 0, getWidth(), getHeight());
         g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
     }
-    public void newScene(){
-        boardController.newScene();
+    public void newScene(BoardPanel boardPanel){
+        boardController.newScene(boardPanel);
         repaint();
     }
 
@@ -206,6 +207,8 @@ public class BoardPanel extends JPanel {
     public BoardController getBoard() {
         return boardController;
     }
+
+
 
 
 }

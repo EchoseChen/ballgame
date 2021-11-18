@@ -58,8 +58,6 @@ public class ChangePanel extends JPanel{
 
     @Override
     public void paint(Graphics g) {
-        g.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
-        g.drawString("PINBALL", 30, 20);
         super.setBackground(Color.WHITE);
         super.paint(g);
     }

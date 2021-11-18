@@ -24,7 +24,7 @@ public class GamePanel extends JMenuBar{
         super.add(fileMenu);
 
         newGame.addActionListener(e -> {
-            boardPanel.newScene();
+            boardPanel.newScene(boardPanel);
         });
         saveGame.addActionListener(e -> {
             boardPanel.getBoard().setCanFocus(false);

@@ -8,6 +8,7 @@ import entity.Gizmo;
 import org.jbox2d.collision.shapes.PolygonShape;
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.*;
+import view.BoardPanel;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -15,7 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BoardController{
-    private World world;//游戏环境
+//    private MyThread thread;
+
+    private static World world;//游戏环境
     private static final Vec2 gravity = new Vec2(0,-9.8f);//游戏中的球重力
 
     private float timeStep = 0.03f;//游戏的更新频率
@@ -48,7 +51,7 @@ public class BoardController{
     }
 
     //加单边
-    private void addSingleBoarder(int x,int y){
+    private static void addSingleBoarder(int x,int y){
         BodyDef def = new BodyDef();
         def.type = BodyType.STATIC;
         def.position.set(x * size * rowNum, y * size * rowNum);
@@ -276,7 +279,7 @@ public class BoardController{
         }
         return true;
     }
-    public void newScene() {
+    public void newScene(BoardPanel boardPanel) {
         newWorld();
         components.clear();
     }

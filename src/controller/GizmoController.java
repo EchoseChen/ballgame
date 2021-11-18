@@ -10,12 +10,12 @@ import org.jbox2d.collision.shapes.PolygonShape;
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.*;
 import org.jbox2d.dynamics.contacts.Contact;
+import view.BoardPanel;
 
 import java.awt.*;
 
 public class GizmoController extends Gizmo {
     private static World world;//随着不一样的world而改变
-    private static BoardController functionController;
 
     private final static int size = 5;//组件固定大小
     private Body body;
@@ -67,7 +67,7 @@ public class GizmoController extends Gizmo {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = circle;
         fixtureDef.density = 50;
-        fixtureDef.restitution = 0.9f;//默认的摩擦系数是0.2,这个设置为碰撞系数，为能量损失参数
+        fixtureDef.restitution = 0.8f;//默认的摩擦系数是0.2,这个设置为碰撞系数，为能量损失参数
         body.createFixture(fixtureDef);
     }
     //方形组件
@@ -87,7 +87,7 @@ public class GizmoController extends Gizmo {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = box;
         fixtureDef.density = 50;
-        fixtureDef.restitution = 1;//
+        fixtureDef.restitution = 0.8f;//
         body.createFixture(fixtureDef);
     }
     //三角形组件
@@ -108,7 +108,7 @@ public class GizmoController extends Gizmo {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
         fixtureDef.density = 50;
-        fixtureDef.restitution = 1;
+        fixtureDef.restitution = 0.8f;
         body.createFixture(fixtureDef);
     }
     //track组件，track根据实际情况没法旋转
@@ -122,7 +122,7 @@ public class GizmoController extends Gizmo {
         PolygonShape shape = new PolygonShape();
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
-        fixtureDef.friction = 0.5f;//比其他组件的摩擦大
+        fixtureDef.friction = 0f;//这里没有摩擦
         body.createFixture(shape, 1);
     }
     //curve组件
@@ -143,8 +143,8 @@ public class GizmoController extends Gizmo {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
         fixtureDef.density = 50;
-        fixtureDef.restitution = 1;
-        fixtureDef.friction = 0.5f;//这里同样设置为更高的摩擦系数
+        fixtureDef.restitution = 0.5f;
+        fixtureDef.friction = 0.8f;//这里同样设置为更高的摩擦系数
         body.createFixture(fixtureDef);
     }
 
@@ -213,6 +213,8 @@ public class GizmoController extends Gizmo {
             case RightPaddle:
                 addRightPaddle(x,y,sizeRate);
                 break;
+            case Absorber:
+                addAbsorber(x,y,sizeRate);
         }
         body.setUserData(figure);
     }
