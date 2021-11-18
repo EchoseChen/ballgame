@@ -276,7 +276,24 @@ public class BoardController{
         }
         return true;
     }
+    public void newScene() {
+        newWorld();
+        components.clear();
+    }
 
+    public void saveScene(String fileName) {
+        GameController.save(components, fileName);
+    }
 
+    public void loadScene(String fileName) {
+        World bworld = world;
+        newWorld();
+        java.util.List<GizmoController> list = GameController.load(fileName);
+        if (components == null) {
+            world = bworld;
+        } else {
+            components = list;
+        }
+    }
 
 }

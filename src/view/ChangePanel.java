@@ -24,7 +24,7 @@ public class ChangePanel extends JPanel{
 
     private ButtonGroup btnGroup = new ButtonGroup();
     public ChangePanel(BoardController board){
-        super.setBorder(new TitledBorder(new EtchedBorder(), "工具栏"));
+//        super.setBorder(new TitledBorder(new EtchedBorder(), "工具栏"));
 
         btnGroup.add(btnRotate);
         btnGroup.add(btnDelete);
@@ -54,5 +54,13 @@ public class ChangePanel extends JPanel{
         GameButton btn = new GameButton(img, change);
         btn.setEnabled(true);
         return btn;
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        g.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
+        g.drawString("PINBALL", 30, 20);
+        super.setBackground(Color.WHITE);
+        super.paint(g);
     }
 }

@@ -11,27 +11,45 @@ public class BallGameWindow {
     private JFrame jFrame = new JFrame("BallGame");
     private GridBagLayout gridBagLayout = new GridBagLayout();
     private GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    private FigurePanel figurePanel = new FigurePanel();
     private BoardController boardController = new BoardController();
+
     private ChangeController changeController = new ChangeController();
+
     private BoardPanel boardPanel = new BoardPanel(boardController,changeController);
     private ChangePanel changePanel = new ChangePanel(boardController);
+    private FigurePanel figurePanel = new FigurePanel();
 
+    public BallGameWindow(){
+        jFrame.setSize(800, 600);
+        jFrame.setLayout(gridBagLayout);
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.weightx=0.0;
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
 
+        jFrame.setJMenuBar(new GamePanel(boardPanel));
+
+        GameBoardInit();
+        FunctionBoardInit();
+
+        jFrame.setResizable(false);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.pack();
+        jFrame.setVisible(true);
+    }
 
     public void GameBoardInit(){
         boardPanel.setPreferredSize(new Dimension(600,600));
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 1;
-        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.gridheight = 6;
         gridBagConstraints.weightx = 0.75;
         gridBagConstraints.weighty = 1;
         jFrame.add(boardPanel, gridBagConstraints);
     }
 
     public void FunctionBoardInit(){
-        NamePanel namePanel1 = new NamePanel("组件栏");
+        NamePanel namePanel1 = new NamePanel("Component Column");
         namePanel1.setPreferredSize(new Dimension(180,23));
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;

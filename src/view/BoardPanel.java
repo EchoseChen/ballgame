@@ -18,7 +18,7 @@ public class BoardPanel extends JPanel {
     private BoardController boardController;
     private ChangeController changeController;
     private MyThread thread;
-    private int length = 220;//面板宽度
+    private int length = 200;//面板宽度
     private int grid;//格子
     private static GizmoController gizmoController;
 
@@ -31,8 +31,7 @@ public class BoardPanel extends JPanel {
         boardController.newWorld();
         addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
+            public void mouseReleased(MouseEvent e) {
                 length = getLength();
                 int x = (int) ((e.getX() - GameInterface.X0) / grid);
                 int y = (int) ((e.getY() - GameInterface.X0)/ grid);
@@ -155,7 +154,8 @@ public class BoardPanel extends JPanel {
         }
     }
 
-    public int getLength(){return Math.min(getHeight(),getWidth()) - 10;}
+    public int getLength(){
+        return Math.min(600,629) - 10;}
     public int getGridSize(){ return getLength()/ (GameInterface.LINES -1);}
 
     class MyThread extends Thread{
@@ -174,7 +174,7 @@ public class BoardPanel extends JPanel {
         }
     }
 
-    public void paintBoard(Graphics g){
+    public void paint(Graphics g){
         Image image = new BufferedImage(getWidth(), getHeight(), Image.SCALE_DEFAULT);
         image.getGraphics().drawRect(0, 0, getWidth(), getHeight());
         length = getLength();
@@ -192,6 +192,20 @@ public class BoardPanel extends JPanel {
         boardController.paintComponents(g2D, grid, length);
         g.clearRect(0, 0, getWidth(), getHeight());
         g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-
     }
+    public void newScene(){
+        boardController.newScene();
+        repaint();
+    }
+
+    public void loadScene(String filename){
+        boardController.loadScene(filename);
+        repaint();
+    }
+
+    public BoardController getBoard() {
+        return boardController;
+    }
+
+
 }

@@ -54,4 +54,8 @@ public class Gizmo implements Serializable {
     public double getAngle() {
         return angle;
     }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
+    }
 }

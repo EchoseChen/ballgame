@@ -6,7 +6,7 @@ import config.Figure;
 import javax.swing.*;
 import java.awt.*;
 
-public class GameButton extends JButton{
+public class GameButton extends JToggleButton{
     private Change change;
     private Figure figure;
     private Image img;
@@ -14,14 +14,14 @@ public class GameButton extends JButton{
     public GameButton(Icon icon, Figure figure){
         super(icon);
         super.setContentAreaFilled(false);
-        super.setBorderPainted(false);
+//        super.setBorderPainted(false);
         this.figure = figure;
     }
 
     public GameButton(Icon icon, Change change){
         super(icon);
-        super.setContentAreaFilled(false);
-        super.setBorderPainted(false);
+//        super.setContentAreaFilled(false);
+//        super.setBorderPainted(false);
         this.change = change;
     }
 
