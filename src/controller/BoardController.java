@@ -19,7 +19,7 @@ public class BoardController{
 //    private MyThread thread;
 
     private static World world;//游戏环境
-    private static final Vec2 gravity = new Vec2(0,-9.8f);//游戏中的球重力
+    private static final Vec2 gravity = new Vec2(0,-80);//游戏中的球重力
 
     private float timeStep = 0.03f;//游戏的更新频率
     private static final int velocityIterations = 8;//速度精度参数，最快速度刷新速度
@@ -64,7 +64,7 @@ public class BoardController{
         }
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = box;
-        fixtureDef.restitution = 1;
+        fixtureDef.restitution = 0.9f;
         body.createFixture(fixtureDef);
         if (x == 0 && y == 0)
             ground = body;

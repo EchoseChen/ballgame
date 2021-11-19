@@ -10,6 +10,7 @@ import org.jbox2d.collision.shapes.PolygonShape;
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.*;
 import org.jbox2d.dynamics.contacts.Contact;
+import view.BallGameWindow;
 import view.BoardPanel;
 
 import java.awt.*;
@@ -235,6 +236,7 @@ public class GizmoController extends Gizmo {
                 if (body1.getUserData() == Figure.Ball && body2.getUserData() == Figure.Absorber) {
                     body1.setUserData(null);
                     GizmoController.world.destroyBody(body1);
+                    BallGameWindow.flag = true;
                 }
 
             }
