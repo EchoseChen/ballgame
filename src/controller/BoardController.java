@@ -251,6 +251,14 @@ public class BoardController{
         }
     }
 
+    public void setXY(GizmoController gizmo){
+        if (gizmo != null){
+            gizmo.drag();
+        }
+    }
+
+
+
 
 
     public void setRowHeight(int height){

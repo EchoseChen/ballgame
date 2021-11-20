@@ -17,7 +17,7 @@ public class GamePanel extends JMenuBar{
     private JMenuItem saveGame = new JMenuItem("loadGame");
     private JMenuItem openGame = new JMenuItem("readGame");
     //private JMenu introMenu = new JMenu("Introduction");
-    private JMenuItem introduction = new JMenuItem("introduction");
+    private JMenuItem introduction = new JMenuItem("Introduction");
 
     public GamePanel(BoardPanel boardPanel){
         fileMenu.add(newGame);

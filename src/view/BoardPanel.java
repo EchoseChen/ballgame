@@ -63,9 +63,9 @@ public class BoardPanel extends JPanel {
                 gizmoController = boardController.getGizmo(x,y);
 
                 if (boardController.getFunction() == Function.Figure){
-//                    if (changeController.getFigure() == Figure.Finger){
-//                        changeController.clear();
-//                    }
+                    if (changeController.getFigure() == Figure.Finger){
+                        boardController.setXY(gizmoController);
+                    }
                     if (changeController.getFigure() == Figure.Ball)
                         sizeRate = 1;
                     else if (changeController.getFigure() == Figure.LeftPaddle||changeController.getFigure()==Figure.RightPaddle)
