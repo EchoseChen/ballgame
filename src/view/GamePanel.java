@@ -6,6 +6,7 @@ import entity.Gizmo;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +16,13 @@ public class GamePanel extends JMenuBar{
     private JMenuItem newGame = new JMenuItem("newGame");
     private JMenuItem saveGame = new JMenuItem("loadGame");
     private JMenuItem openGame = new JMenuItem("readGame");
+    private JMenuItem induction = new JMenuItem("induction");
 
     public GamePanel(BoardPanel boardPanel){
         fileMenu.add(newGame);
         fileMenu.add(saveGame);
         fileMenu.add(openGame);
-
+        fileMenu.add(induction);
         super.add(fileMenu);
 
         newGame.addActionListener(e -> {
@@ -46,6 +48,20 @@ public class GamePanel extends JMenuBar{
             File file = chooser.getSelectedFile();
             boardPanel.loadScene(file.getAbsolutePath());
             boardPanel.getBoard().setCanFocus(true);
+        });
+        induction.addActionListener(e -> {
+
+            JFrame ind = new JFrame("游戏介绍");
+            ind.setSize(1000,600);
+            ind.setLayout(new FlowLayout());
+            JLabel jl=new JLabel(new ImageIcon("icons/induction.png"));
+            ind.add(jl);
+            jl.setBounds(0,0,1000,1000);
+
+
+            ind.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            ind.pack();
+            ind.setVisible(true);
         });
     }
 }
