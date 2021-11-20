@@ -29,7 +29,29 @@ public class BoardPanel extends JPanel {
         this.changeController = changeController;
         grid = getGridSize();
         boardController.setRowHeight(grid);
-//        boardController.newWorld();
+        boardController.newWorld();
+
+
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public synchronized void mouseDragged(MouseEvent e) {
+                if(boardController.getFunction()==Function.Figure){
+                    if(changeController.getFigure()==Figure.Finger){
+                        int x = (int) ((e.getX() - GameInterface.X0) / grid);
+                        int y = (int) ((e.getY() - GameInterface.X0)/ grid);
+                        gizmoController = boardController.getGizmo(x,y);
+//                        System.out.println(gizmoController);
+//                        x = (int) ((e.getX() - GameInterface.X0) / grid);
+//                        y =  (int) ((e.getY() - GameInterface.X0)/ grid);
+//                        boardController.dragGizmo(gizmoController,x,y);
+                        if(gizmoController!=null){
+                            gizmoController.setXY(x,y);
+                        }
+                    }
+                }
+                repaint();
+            }
+        });
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -41,9 +63,9 @@ public class BoardPanel extends JPanel {
                 gizmoController = boardController.getGizmo(x,y);
 
                 if (boardController.getFunction() == Function.Figure){
-                    if (changeController.getFigure() == Figure.Finger){
-                        changeController.clear();
-                    }
+//                    if (changeController.getFigure() == Figure.Finger){
+//                        changeController.clear();
+//                    }
                     if (changeController.getFigure() == Figure.Ball)
                         sizeRate = 1;
                     else if (changeController.getFigure() == Figure.LeftPaddle||changeController.getFigure()==Figure.RightPaddle)
@@ -52,19 +74,9 @@ public class BoardPanel extends JPanel {
                         sizeRate = 1;
                     else if (changeController.getFigure() == Figure.Curve)
                         sizeRate = 1;
-                    if (boardController.canAdd(x, y, sizeRate, changeController.getFigure())){
-//                        System.out.println(changeController.getFigure());
-
-                        if (changeController.getFigure() == Figure.Absorber){
-                            GizmoController tmp = new GizmoController(x,y,sizeRate, changeController.getFigure(), changeController.getImg());
-                            // Gizmo tmp1 = new Gizmo(x - 1,y, sizeRate, dataSource.getShape(), dataSource.getImg());
-                            boardController.addComponents(tmp);
-                            // board.addComponents(tmp1);
-                        }
-                        else {
-                            GizmoController tmp = new GizmoController(x,y,sizeRate, changeController.getFigure(), changeController.getImg());
-                            boardController.addComponents(tmp);
-                        }
+                    if (changeController.getFigure()!= Figure.Finger&&boardController.canAdd(x, y, sizeRate, changeController.getFigure())){
+                        GizmoController tmp = new GizmoController(x,y,sizeRate, changeController.getFigure(), changeController.getImg());
+                        boardController.addComponents(tmp);
                     }
                 }else if (boardController.getFunction() == Function.Change){
                     if (changeController.getChange() == Change.Delete){
@@ -80,7 +92,6 @@ public class BoardPanel extends JPanel {
                     }
                 }
                 repaint();
-
             }
         });
 

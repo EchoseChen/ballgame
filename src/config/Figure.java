@@ -6,5 +6,5 @@ package config;
 public enum Figure {
     Absorber, Circle, Ball, LeftPaddle, RightPaddle,
     Track, Curve,Triangle,
-    Square, Finger
+    Square,Finger
 }

@@ -1,5 +1,6 @@
 package view;
 
+import config.Change;
 import config.Figure;
 import config.Function;
 import controller.ChangeController;
@@ -34,6 +35,7 @@ public class FigurePanel extends JPanel {
         btn.setEnabled(true);
         return btn;
     }
+
 
     public FigurePanel(){
         btnGroup.add(btnFinger);

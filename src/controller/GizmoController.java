@@ -285,6 +285,11 @@ public class GizmoController extends Gizmo {
         updateBody();
     }
 
+    public void drag(int xx, int yy){
+        x = xx;
+        y = yy;
+    }
+
     public void delete(){
         world.destroyBody(body);
     }

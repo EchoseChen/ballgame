@@ -177,6 +177,11 @@ public class BoardController{
             }
         }
     }
+    public void dragGizmo(GizmoController gizmo,int dx,int dy){
+        if(gizmo!=null){
+            gizmo.move(dx,dy);
+        }
+    }
 
     public void setStep(){
         world.step(timeStep, velocityIterations, positionIterations);
@@ -192,7 +197,7 @@ public class BoardController{
             int tempX = temp.getX();
             int tempY = temp.getY();
             int sizeRate = temp.getSizeRate();
-            if (x >= tempX && x < tempX + sizeRate && y >= tempY && y < tempY + sizeRate)
+            if (x >= tempX-1 && x <= tempX + sizeRate && y >= tempY-1 && y <= tempY + sizeRate)
                 return temp;
         }
         return null;
@@ -245,6 +250,8 @@ public class BoardController{
             components.remove(gizmo);
         }
     }
+
+
 
     public void setRowHeight(int height){
         this.rowHeight = height;
