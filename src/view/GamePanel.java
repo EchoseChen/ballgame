@@ -16,14 +16,16 @@ public class GamePanel extends JMenuBar{
     private JMenuItem newGame = new JMenuItem("newGame");
     private JMenuItem saveGame = new JMenuItem("loadGame");
     private JMenuItem openGame = new JMenuItem("readGame");
-    private JMenuItem induction = new JMenuItem("induction");
+    private JMenu introMenu = new JMenu("Introduction");
+    private JMenuItem introduction = new JMenuItem("introduction");
 
     public GamePanel(BoardPanel boardPanel){
         fileMenu.add(newGame);
         fileMenu.add(saveGame);
         fileMenu.add(openGame);
-        fileMenu.add(induction);
+        introMenu.add(introduction);
         super.add(fileMenu);
+        super.add(introMenu);
 
         newGame.addActionListener(e -> {
             boardPanel.newScene(boardPanel);
@@ -49,12 +51,12 @@ public class GamePanel extends JMenuBar{
             boardPanel.loadScene(file.getAbsolutePath());
             boardPanel.getBoard().setCanFocus(true);
         });
-        induction.addActionListener(e -> {
+        introduction.addActionListener(e -> {
 
             JFrame ind = new JFrame("游戏介绍");
             ind.setSize(1000,600);
             ind.setLayout(new FlowLayout());
-            JLabel jl=new JLabel(new ImageIcon("icons/induction.png"));
+            JLabel jl=new JLabel(new ImageIcon("icons/introduction.png"));
             ind.add(jl);
             jl.setBounds(0,0,1000,1000);
 
