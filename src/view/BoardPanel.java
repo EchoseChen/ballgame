@@ -39,7 +39,7 @@ public class BoardPanel extends JPanel {
                     if(changeController.getFigure()==Figure.Finger){
                         int x = (int) ((e.getX() - GameInterface.X0) / grid);
                         int y = (int) ((e.getY() - GameInterface.X0)/ grid);
-                        gizmoController = boardController.getGizmo(x,y);
+                        gizmoController = boardController.getGizmoDrag(x,y);
 //                        System.out.println(gizmoController);
 //                        x = (int) ((e.getX() - GameInterface.X0) / grid);
 //                        y =  (int) ((e.getY() - GameInterface.X0)/ grid);
@@ -74,7 +74,7 @@ public class BoardPanel extends JPanel {
                         sizeRate = 1;
                     else if (changeController.getFigure() == Figure.Curve)
                         sizeRate = 1;
-                    if (changeController.getFigure()!= Figure.Finger&&boardController.canAdd(x, y, sizeRate, changeController.getFigure())){
+                    if (changeController.getFigure()!=null&&changeController.getFigure()!= Figure.Finger&&boardController.canAdd(x, y, sizeRate, changeController.getFigure())){
                         GizmoController tmp = new GizmoController(x,y,sizeRate, changeController.getFigure(), changeController.getImg());
                         boardController.addComponents(tmp);
                     }

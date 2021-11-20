@@ -46,8 +46,6 @@ public class BoardController{
                 addSingleBoarder(i, j);
         }
         GizmoController.setWorld(world);
-
-
     }
 
     //加单边
@@ -192,6 +190,18 @@ public class BoardController{
     }
 
     public GizmoController getGizmo(int x, int y) {
+        for (int i = 0; i < components.size(); i++) {
+            GizmoController temp = components.get(i);
+            int tempX = temp.getX();
+            int tempY = temp.getY();
+            int sizeRate = temp.getSizeRate();
+            if (x >= tempX && x < tempX + sizeRate && y >= tempY && y < tempY + sizeRate)
+                return temp;
+        }
+        return null;
+    }
+
+    public GizmoController getGizmoDrag(int x, int y) {
         for (int i = 0; i < components.size(); i++) {
             GizmoController temp = components.get(i);
             int tempX = temp.getX();

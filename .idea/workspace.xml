@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d8ceeafb-6601-4b9c-a21f-2214b4aa5a3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/GameInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/GameInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GizmoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GizmoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/jbox2d-library-2.2.1.1.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -70,8 +71,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637396742788</updated>
+      <workItem from="1637423958359" duration="3237000" />
     </task>
+    <task id="LOCAL-00001" summary="把design和play在drag后不一致bug修复">
+      <created>1637406038006</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637406038006</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -84,5 +97,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="把design和play在drag后不一致bug修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="把design和play在drag后不一致bug修复" />
   </component>
 </project>

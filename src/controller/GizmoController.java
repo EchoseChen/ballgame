@@ -1,6 +1,7 @@
 package controller;
 
 import config.Figure;
+import config.GameInterface;
 import entity.Gizmo;
 import org.jbox2d.callbacks.ContactImpulse;
 import org.jbox2d.callbacks.ContactListener;
@@ -228,6 +229,10 @@ public class GizmoController extends Gizmo {
             public void beginContact(Contact contact) {
                 Body body1 = contact.getFixtureA().getBody();
                 Body body2 = contact.getFixtureB().getBody();
+                if(body1.getUserData() == Figure.Track||body1.getUserData() == Figure.Curve||body2.getUserData() == Figure.Track||body2.getUserData() == Figure.Curve){
+                    body2.applyForce(new Vec2(0,400),new Vec2(body2.getPosition()));
+                    body1.applyForce(new Vec2(0,400),new Vec2(body2.getPosition()));
+                }
                 if (body2.getUserData() == Figure.Ball) {
                     Body b = body1;
                     body1 = body2;
@@ -243,6 +248,8 @@ public class GizmoController extends Gizmo {
 
             @Override
             public void endContact(Contact contact) {
+//                Body body1 = contact.getFixtureA().getBody();
+//                Body body2 = contact.getFixtureB().getBody();
 
             }
 
