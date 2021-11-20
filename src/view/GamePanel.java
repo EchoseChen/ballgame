@@ -16,16 +16,16 @@ public class GamePanel extends JMenuBar{
     private JMenuItem newGame = new JMenuItem("newGame");
     private JMenuItem saveGame = new JMenuItem("loadGame");
     private JMenuItem openGame = new JMenuItem("readGame");
-    private JMenu introMenu = new JMenu("Introduction");
+    //private JMenu introMenu = new JMenu("Introduction");
     private JMenuItem introduction = new JMenuItem("introduction");
 
     public GamePanel(BoardPanel boardPanel){
         fileMenu.add(newGame);
         fileMenu.add(saveGame);
         fileMenu.add(openGame);
-        introMenu.add(introduction);
+
         super.add(fileMenu);
-        super.add(introMenu);
+        super.add(introduction);
 
         newGame.addActionListener(e -> {
             boardPanel.newScene(boardPanel);
