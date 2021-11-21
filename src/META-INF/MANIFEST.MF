@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: view.BallGameWindow
+Class-Path: jbox2d-library-2.2.1.1.jar jbox2d-library-2.2.1.1.jar
+

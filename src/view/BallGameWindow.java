@@ -3,9 +3,16 @@ package view;
 import config.Figure;
 import controller.BoardController;
 import controller.ChangeController;
+import controller.MusicController;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.*;
+import java.io.File;
+import java.net.URI;
+import java.net.URL;
 
 public class BallGameWindow {
     private JFrame jFrame = new JFrame("BallGame");
@@ -23,6 +30,7 @@ public class BallGameWindow {
 
 
     public BallGameWindow(){
+        MusicController.playBackground();
         boardController.newWorld();
         jFrame.setSize(800, 600);
         jFrame.setLayout(gridBagLayout);
@@ -56,7 +64,6 @@ public class BallGameWindow {
                 }
             }
         }).start();
-
     }
 
     public void GameBoardInit(){
@@ -83,12 +90,9 @@ public class BallGameWindow {
         figurePanel.setPreferredSize(new Dimension(180,320));
         figurePanel.setBackground(Color.WHITE);
         gridBagConstraints.gridx = 1;
-//        constraints.gridy = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 1;
         gridBagConstraints.gridheight = 1;
-//        constraints.weightx = 0.3;
-//        constraints.weighty = 0.2;
         jFrame.add(figurePanel,gridBagConstraints);
 
         NamePanel namePanel2 = new NamePanel("Change Bar");
@@ -102,7 +106,6 @@ public class BallGameWindow {
 
         changePanel.setPreferredSize(new Dimension(180,160));
         gridBagConstraints.gridx = 1;
-//        constraints.gridy = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 1;
         gridBagConstraints.gridheight = 1;
@@ -122,7 +125,6 @@ public class BallGameWindow {
         PatternPanel patternPanel = new PatternPanel(boardPanel);
         patternPanel.setPreferredSize(new Dimension(180,80));
         gridBagConstraints.gridx = 1;
-//        constraints.gridy = 2;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 1;
         gridBagConstraints.gridheight = 1;
@@ -133,7 +135,8 @@ public class BallGameWindow {
     }
 
 
+
     public static void main(String[] args) {
-        BallGameWindow gameWindow = new BallGameWindow();
+        new BallGameWindow();
     }
 }

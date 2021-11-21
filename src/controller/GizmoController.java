@@ -227,6 +227,7 @@ public class GizmoController extends Gizmo {
         GizmoController.world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
+                MusicController.playHit();
                 Body body1 = contact.getFixtureA().getBody();
                 Body body2 = contact.getFixtureB().getBody();
                 if(body1.getUserData() == Figure.Track||body1.getUserData() == Figure.Curve||body2.getUserData() == Figure.Track||body2.getUserData() == Figure.Curve){
@@ -248,9 +249,6 @@ public class GizmoController extends Gizmo {
 
             @Override
             public void endContact(Contact contact) {
-//                Body body1 = contact.getFixtureA().getBody();
-//                Body body2 = contact.getFixtureB().getBody();
-
             }
 
             @Override

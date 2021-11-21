@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="ballgame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ballgame_jar</output-path>
+    <root id="root">
+      <element id="archive" name="ballgame.jar">
+        <element id="module-output" name="ballgame" />
+      </element>
+      <element id="library" level="project" name="jbox2d-library-2.2.1.11" />
+      <element id="library" level="project" name="jbox2d-library-2.2.1.1" />
+    </root>
+  </artifact>
+</component>

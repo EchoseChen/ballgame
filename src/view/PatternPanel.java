@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 
 public class PatternPanel extends JPanel {
     private JButton btnDesign = new JButton("DesignPattern");
-    private JButton btnPlay = new JButton("PlayPattern");
+    private JButton btnPlay = new JButton("   PlayPattern  ");
 
     public PatternPanel(BoardPanel boardPanel){
 //        super.setBorder(new TitledBorder(new EtchedBorder(), "模式栏", TitledBorder.CENTER, TitledBorder.TOP));
