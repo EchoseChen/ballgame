@@ -106,10 +106,6 @@ public class BoardController{
                         px -= gizmoController.getSizeRate() * rowHeight / 2.0f;
                         py += 0.875f * rowHeight;
                     }
-                    //else if (gizmo.getShape() == Shape.Track){
-                    //    px -= 0.875 * rowHeight;
-                    //    py += rowHeight;
-                    //}
                     else {
                         px -= gizmoController.getSizeRate() * rowHeight / 2.0f;
                         py += gizmoController.getSizeRate() * rowHeight / 2.0f;
@@ -130,10 +126,6 @@ public class BoardController{
             if (gizmoController.getFigure() == Figure.Ball){
                 g2D.drawImage(curImg, (int)px, (int)py, rowHeight , rowHeight , null);
             }
-            // else if (gizmo.getShape() == Shape.Track){
-            //g2D.setColor(new Color(138,204,241));
-            //g2D.fill(paintPaddle(px, py, sizeRate));
-            // }
             else if (gizmoController.getFigure() == Figure.LeftPaddle||gizmoController.getFigure() == Figure.RightPaddle){
                 g2D.drawImage(curImg, (int)px, (int)py, sizeRate * rowHeight, sizeRate * rowHeight, null);
             }

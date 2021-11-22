@@ -7,8 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8ceeafb-6601-4b9c-a21f-2214b4aa5a3d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ChangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ChangeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GizmoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GizmoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MusicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MusicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/BallGameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BallGameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ChangePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChangePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PatternPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PatternPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +97,7 @@
       <updated>1637396742788</updated>
       <workItem from="1637423958359" duration="3269000" />
       <workItem from="1637496793095" duration="10027000" />
+      <workItem from="1637564803842" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="把design和play在drag后不一致bug修复">
       <created>1637406038006</created>
@@ -112,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637508132681</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改load 的bug">
+      <created>1637564839373</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637564839373</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="把design和play在drag后不一致bug修复" />
     <MESSAGE value="加背景音和撞击音" />
-    <option name="LAST_COMMIT_MESSAGE" value="加背景音和撞击音" />
+    <MESSAGE value="修改load 的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改load 的bug" />
   </component>
 </project>

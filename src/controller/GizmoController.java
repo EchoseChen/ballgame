@@ -291,8 +291,7 @@ public class GizmoController extends Gizmo {
     }
 
     public void drag(){
-//        x = xx;
-//        y = yy;
+        //加updatebody是由于设计模式和playpattern保存的是两套components，所以要及时更新play里面的component
         updateBody();
     }
 

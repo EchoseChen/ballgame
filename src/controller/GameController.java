@@ -17,8 +17,6 @@ public class GameController {
             fg.setSizeRate(g.getSizeRate());
             fg.setX(g.getX());
             fg.setY(g.getY());
-            //fg.setImg(g.getImg());
-//            System.out.println(fg.getX());
             list.add(fg);
         }
         writeObjectToFile(list, path);
@@ -85,9 +83,7 @@ public class GameController {
             ObjectInputStream objIn = new ObjectInputStream(in);
             temp = objIn.readObject();
             objIn.close();
-//            System.out.println("read object success!");
         } catch (IOException e) {
-//            System.out.println("read object failed");
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -104,9 +100,7 @@ public class GameController {
             objOut.writeObject(obj);
             objOut.flush();
             objOut.close();
-//            System.out.println("write object success!");
         } catch (IOException e) {
-//            System.out.println("write object failed");
             e.printStackTrace();
         }
     }

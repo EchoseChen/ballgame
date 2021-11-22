@@ -24,7 +24,6 @@ public class ChangePanel extends JPanel{
 
     private ButtonGroup btnGroup = new ButtonGroup();
     public ChangePanel(BoardController board){
-//        super.setBorder(new TitledBorder(new EtchedBorder(), "工具栏"));
 
         btnGroup.add(btnRotate);
         btnGroup.add(btnDelete);

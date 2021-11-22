@@ -54,11 +54,4 @@ public class ChangeController {
         return figure;
     }
 
-    public static Function getCurFunction() {
-        return curFunction;
-    }
-
-    public static void setCurFunction(Function curFunction) {
-        ChangeController.curFunction = curFunction;
-    }
 }

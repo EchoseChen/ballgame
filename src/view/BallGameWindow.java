@@ -7,12 +7,7 @@ import controller.MusicController;
 
 import javax.sound.sampled.*;
 import javax.swing.*;
-import java.applet.Applet;
-import java.applet.AudioClip;
 import java.awt.*;
-import java.io.File;
-import java.net.URI;
-import java.net.URL;
 
 public class BallGameWindow {
     private JFrame jFrame = new JFrame("BallGame");

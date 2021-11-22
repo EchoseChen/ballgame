@@ -41,7 +41,6 @@ public class MusicController {
             e.printStackTrace();
         }
         hit.start();//开始播放
-//        bgm.loop(Clip.LOOP_CONTINUOUSLY);//循环播放
     }
 
 

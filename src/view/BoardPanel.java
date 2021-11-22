@@ -40,10 +40,6 @@ public class BoardPanel extends JPanel {
                         int x = (int) ((e.getX() - GameInterface.X0) / grid);
                         int y = (int) ((e.getY() - GameInterface.X0)/ grid);
                         gizmoController = boardController.getGizmoDrag(x,y);
-//                        System.out.println(gizmoController);
-//                        x = (int) ((e.getX() - GameInterface.X0) / grid);
-//                        y =  (int) ((e.getY() - GameInterface.X0)/ grid);
-//                        boardController.dragGizmo(gizmoController,x,y);
                         if(gizmoController!=null){
                             gizmoController.setXY(x,y);
                         }
