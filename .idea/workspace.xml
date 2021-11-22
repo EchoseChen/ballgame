@@ -7,14 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8ceeafb-6601-4b9c-a21f-2214b4aa5a3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ballgame_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/background.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contact.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/MusicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GizmoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GizmoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/BallGameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BallGameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PatternPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PatternPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637396742788</updated>
       <workItem from="1637423958359" duration="3269000" />
-      <workItem from="1637496793095" duration="5863000" />
+      <workItem from="1637496793095" duration="10027000" />
     </task>
     <task id="LOCAL-00001" summary="把design和play在drag后不一致bug修复">
       <created>1637406038006</created>
@@ -111,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637427212798</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="加背景音和撞击音">
+      <created>1637508132681</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637508132681</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="把design和play在drag后不一致bug修复" />
-    <option name="LAST_COMMIT_MESSAGE" value="把design和play在drag后不一致bug修复" />
+    <MESSAGE value="加背景音和撞击音" />
+    <option name="LAST_COMMIT_MESSAGE" value="加背景音和撞击音" />
   </component>
 </project>

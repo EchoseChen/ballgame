@@ -28,7 +28,7 @@ public class GameController {
         List<Gizmo> list = (List<Gizmo>) readObjectFromFile(path);
         List<GizmoController> components = new ArrayList<>();
         ImageIcon pinball=new ImageIcon("icons/playball.png");
-        ImageIcon circle=new ImageIcon("icons/ball.png");
+        ImageIcon circle=new ImageIcon("icons/circle.png");
         ImageIcon absorber=new ImageIcon("icons/blackhole.png");
         ImageIcon square =new ImageIcon("icons/square.png");
         ImageIcon triangle=new ImageIcon("icons/triangle.png");
