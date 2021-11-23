@@ -50,6 +50,55 @@ public class BoardPanel extends JPanel {
         });
         addMouseListener(new MouseAdapter() {
             @Override
+            public void mouseClicked(MouseEvent e) {
+                if(e.getButton() == MouseEvent.BUTTON3){
+                    int x = (int) ((e.getX() - GameInterface.X0) / grid);
+                    int y = (int) ((e.getY() - GameInterface.X0)/ grid);
+                    int sizeRate = boardController.getSizeRate();
+                    gizmoController = boardController.getGizmo(x,y);
+                    String string = "PlayBoard";
+                    if(gizmoController!=null){
+                        switch (gizmoController.getFigure()){
+                            case Ball:
+                                string = "PlayBall";
+                                break;
+                            case Track:
+                                string = "Track";
+                                break;
+                            case Absorber:
+                                string = "Absorber";
+                                break;
+                            case Curve:
+                                string = "Curve";
+                                break;
+                            case Triangle:
+                                string = "Triangle";
+                                break;
+                            case Square:
+                                string = "Square";
+                                break;
+                            case LeftPaddle:
+                                string = "LeftPaddle";
+                                break;
+                            case RightPaddle:
+                                string = "RightPaddle";
+                                break;
+                            case Circle:
+                                string = "Circle";
+                                break;
+                            default:
+                                string = "PlayBoard";
+                        }
+                    }
+                    JPopupMenu menu = new JPopupMenu();
+                    JMenuItem name = new JMenuItem(string);
+                    menu.add(name);
+                    menu.show(e.getComponent(),e.getX(),e.getY());
+                }
+            }
+        });
+        addMouseListener(new MouseAdapter() {
+            @Override
             public void mouseReleased(MouseEvent e) {
                 length = getLength();
                 int x = (int) ((e.getX() - GameInterface.X0) / grid);
